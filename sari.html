@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnic Elegance | PRAPIKA CENTRAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #721c24;
+            --accent: #d4af37;
+            --bg: #fffcfc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: #333;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Product Grid */
+        .product-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin: 10px 0;
+            color: var(--primary);
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .size-options {
+            margin-bottom: 15px;
+        }
+
+        .size-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border: 1px solid #ddd;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .buy-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #f8f8f8;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Ethnic Elegance</h1>
+        <p>Tradition meets Luxury</p>
+    </header>
+
+    <div class="product-container">
+        
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500" class="product-img">
+            <div class="product-info">
+                <span class="product-category">Banarasi Saree</span>
+                <h3 class="product-title">Royal Gold Silk Saree</h3>
+                <div class="rating">★★★★☆ (120 Reviews)</div>
+                <p class="description">Handwoven pure silk saree with intricate zari work, perfect for weddings.</p>
+                <div class="size-options">
+                    <span class="size-tag">Free Size</span>
+                </div>
+                <div class="price-row">
+                    <span class="price">₹4,999</span>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500" class="product-img">
+            <div class="product-info">
+                <span class="product-category">Anarkali Suit</span>
+                <h3 class="product-title">Deep Red Floral Anarkali</h3>
+                <div class="rating">★★★★★ (85 Reviews)</div>
+                <p class="description">Georgette fabric with heavy embroidery and matching dupatta.</p>
+                <div class="size-options">
+                    <span class="size-tag">S</span><span class="size-tag">M</span><span class="size-tag">L</span><span class="size-tag">XL</span>
+                </div>
+                <div class="price-row">
+                    <span class="price">₹2,499</span>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500" class="product-img">
+            <div class="product-info">
+                <span class="product-category">Lehenga Choli</span>
+                <h3 class="product-title">Pastel Pink Bridal Lehenga</h3>
+                <div class="rating">★★★★☆ (45 Reviews)</div>
+                <p class="description">Sequined velvet lehenga for the modern bride.</p>
+                <div class="size-options"><span class="size-tag">M</span><span class="size-tag">L</span></div>
+                <div class="price-row"><span class="price">₹12,999</span><button class="buy-btn">Add to Cart</button></div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1621184055586-ef8172af7db1?w=500" class="product-img">
+            <div class="product-info">
+                <span class="product-category">Kurti Set</span>
+                <h3 class="product-title">White ChikanKari Kurti</h3>
+                <div class="rating">★★★★★ (210 Reviews)</div>
+                <p class="description">Pure cotton lucknowi work kurti with palazzo.</p>
+                <div class="size-options"><span class="size-tag">S</span><span class="size-tag">M</span><span class="size-tag">XL</span></div>
+                <div class="price-row"><span class="price">₹1,299</span><button class="buy-btn">Add to Cart</button></div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1599032909756-5dee8c65e642?w=500" class="product-img">
+            <div class="product-info">
+                <span class="product-category">Saree</span>
+                <h3 class="product-title">Emerald Green Chiffon</h3>
+                <div class="rating">★★★★☆ (67 Reviews)</div>
+                <p class="description">Lightweight chiffon saree with border piping.</p>
+                <div class="price-row"><span class="price">₹1,850</span><button class="buy-btn">Add to Cart</button></div>
+            </div>
+        </div>
+
+        <div class="product-card"><div class="product-info"><h3>Evening Gown Style Saree</h3><div class="rating">★★★★★</div><p class="description">Ready to wear pre-pleated saree.</p><div class="price-row"><span class="price">₹3,200</span><button class="buy-btn">Add to Cart</button></div></div></div>
+        <div class="product-card"><div class="product-info"><h3>Indigo Print Suit</h3><div class="rating">★★★★☆</div><p class="description">Jaipuri block print cotton suit set.</p><div class="price-row"><span class="price">₹1,599</span><button class="buy-btn">Add to Cart</button></div></div></div>
+        <div class="product-card"><div class="product-info"><h3>Mirror Work Lehenga</h3><div class="rating">★★★★★</div><p class="description">Traditional Gujrati style party wear.</p><div class="price-row"><span class="price">₹7,500</span><button class="buy-btn">Add to Cart</button></div></div></div>
+        <div class="product-card"><div class="product-info"><h3>Zari Border Saree</h3><div class="rating">★★★★☆</div><p class="description">Kanchipuram inspired traditional silk.</p><div class="price-row"><span class="price">₹5,400</span><button class="buy-btn">Add to Cart</button></div></div></div>
+        <div class="product-card"><div class="product-info"><h3>Velvet Dupatta Set</h3><div class="rating">★★★★★</div><p class="description">Designer suit with heavy velvet dupatta.</p><div class="price-row"><span class="price">₹4,100</span><button class="buy-btn">Add to Cart</button></div></div></div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PRAPIKA CENTRAL | Traditional Collection</p>
+    </footer>
+
+</body>
+</html>
