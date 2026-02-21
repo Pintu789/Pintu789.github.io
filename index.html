@@ -1,89 +1,36 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Shop</title>
-</head>
-<body>
-
-<h2>Add Product</h2>
-
-<input type="text" id="title" placeholder="Title"><br><br>
-<textarea id="description" placeholder="Description"></textarea><br><br>
-<input type="text" id="price" placeholder="Price"><br><br>
-<input type="file" id="image"><br><br>
-<button onclick="addProduct()">Add Product</button>
-
-<hr>
-<h2>Products</h2>
 <div id="products"></div>
 
 <script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-storage.js";
+const supabaseUrl = 'YAHAN_APNA_URL_DALO'
+const supabaseKey = 'YAHAN_APNA_PUBLIC_KEY_DALO'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBkmC7tSCKjjA-1z9NbTklQkNVGaNeYBY0",
-  authDomain: "prapika-131fc.firebaseapp.com",
-  projectId: "prapika-131fc",
-  storageBucket: "prapika-131fc.firebasestorage.app",
-  messagingSenderId: "75116240330",
-  appId: "1:75116240330:web:5825d9240e9f7dd5638333"
-};
+const supabase = createClient(supabaseUrl, supabaseKey)
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+async function loadProducts() {
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
 
-window.addProduct = async function(){
-
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
-  const price = document.getElementById("price").value;
-  const file = document.getElementById("image").files[0];
-
-  if(!file){
-    alert("Please select image");
-    return;
+  if(error){
+    console.log(error)
+    return
   }
 
-  const storageRef = ref(storage, "products/" + Date.now() + file.name);
-  await uploadBytes(storageRef, file);
-  const imageURL = await getDownloadURL(storageRef);
+  const container = document.getElementById("products")
 
-  await addDoc(collection(db, "products"), {
-    title,
-    description,
-    price,
-    image: imageURL
-  });
-
-  alert("Product Added Successfully!");
-  location.reload();
-}
-
-async function loadProducts(){
-  const querySnapshot = await getDocs(collection(db, "products"));
-  const container = document.getElementById("products");
-
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
+  data.forEach(p => {
     container.innerHTML += `
       <div style="border:1px solid #ccc; padding:10px; margin:10px;">
-        <img src="${data.image}" width="150"><br>
-        <h3>${data.title}</h3>
-        <p>${data.description}</p>
-        <strong>₹${data.price}</strong>
+        <img src="${p.image}" width="150"><br>
+        <h3>${p.title}</h3>
+        <p>${p.description}</p>
+        <strong>₹${p.price}</strong>
       </div>
-    `;
-  });
+    `
+  })
 }
 
-loadProducts();
-
+loadProducts()
 </script>
-
-</body>
-</html>
