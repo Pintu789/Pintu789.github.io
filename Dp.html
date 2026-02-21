@@ -254,6 +254,243 @@
 
         <div class="category-grid">
             <div class="card">
+                 <a href="https://pintu789.github.io/sari.html"</a>
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Saree">
+                <div class="card-overlay">
+                    <h3>Ethnic Elegance</h3>
+                    <p>Sarees & Lehengas</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" alt="Western">
+                <div class="card-overlay">
+                    <h3>Modern Muse</h3>
+                    <p>Dresses & Gowns</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Bags">
+                <div class="card-overlay">
+                    <h3>The Finishing Touch</h3>
+                    <p>Luxury Accessories</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=500&q=80" alt="Heels">
+                <div class="card-overlay">
+                    <h3>Walk in Style</h3>
+                    <p>Designer Footwear</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">PRAPIKA CENTRAL</div>
+        <p>Subscribe to get special offers and once-in-a-lifetime deals.</p>
+        <div class="social-links" style="margin-top: 20px;">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Pinterest</a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.7rem; color: #444;">&copy; 2026 PRAPIKA CENTRAL. MADE WITH ❤️ FOR YOU.</p>
+    </footer>
+
+</body>
+</html>
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            margin: 0 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Banner Section */
+        .hero {
+            height: 500px;
+            background: linear-gradient(to right, rgba(0,0,0,0.6), transparent), 
+                        url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10%;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 35px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* Categories Section */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 50px;
+            height: 2px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 40px 20px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .card-overlay h3 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .card-overlay p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #888;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">FREE SHIPPING ON ORDERS ABOVE ₹1999 | NEW COLLECTION LIVE</div>
+
+    <header>
+        <h1>PRAPIKA CENTRAL</h1>
+        <p>THE ESSENCE OF ELEGANCE</p>
+    </header>
+
+    <nav>
+        <a href="#">New In</a>
+        <a href="#collection">Traditional</a>
+        <a href="#collection">Western Wear</a>
+        <a href="#collection">Jewellery</a>
+        <a href="#">Lookbook</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p style="letter-spacing: 4px; color: var(--accent-color);">PREMIUM COLLECTION</p>
+            <h2>Vibrant <br>Summer '26</h2>
+            <a href="#collection" class="hero-btn">SHOP THE LOOK</a>
+        </div>
+    </section>
+
+    <div class="container" id="collection">
+        <div class="section-header">
+            <h2>Shop By Collection</h2>
+        </div>
+
+        <div class="category-grid">
+            <div class="card">
                 <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Saree">
                 <div class="card-overlay">
                     <h3>Ethnic Elegance</h3>
