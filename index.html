@@ -6,7 +6,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const supabaseUrl = 'https://bzrtatocdlyeyttomgdu.supabase.co'
 const supabaseKey = 'sb_publishable_sBtkBG9vQ82_cyG3ML40XQ_eR7lB3UI'
 
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabase = createClient(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6cnRhdG9jZGx5ZXl0dG9tZ2R1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2NzEzODksImV4cCI6MjA4NzI0NzM4OX0.SMf6E3hRRhFbZVB6dRbEZqAEEZvZcmuIy1jpk0Fksvk)
 
 async function loadProducts() {
   const { data, error } = await supabase
