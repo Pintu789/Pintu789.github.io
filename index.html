@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Shop</title>
+</head>
+<body>
+
+<h2>My Products</h2>
 <div id="products"></div>
 
 <script type="module">
@@ -6,27 +14,30 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const supabaseUrl = 'https://bzrtatocdlyeyttomgdu.supabase.co'
 const supabaseKey = 'sb_publishable_sBtkBG9vQ82_cyG3ML40XQ_eR7lB3UI'
 
-const supabase = createClient(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6cnRhdG9jZGx5ZXl0dG9tZ2R1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2NzEzODksImV4cCI6MjA4NzI0NzM4OX0.SMf6E3hRRhFbZVB6dRbEZqAEEZvZcmuIy1jpk0Fksvk)
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function loadProducts() {
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
+    .order('id', { ascending: false })
 
-  if(error){
-    console.log(error)
+  if (error) {
+    console.log("Error:", error)
     return
   }
 
   const container = document.getElementById("products")
+  container.innerHTML = ""
 
   data.forEach(p => {
     container.innerHTML += `
-      <div style="border:1px solid #ccc; padding:10px; margin:10px;">
-        <img src="${p.image}" width="150"><br>
+      <div style="border:1px solid #ddd; padding:15px; margin:15px; border-radius:10px;">
+        <img src="${p.image}" width="200"><br><br>
         <h3>${p.title}</h3>
         <p>${p.description}</p>
-        <strong>₹${p.price}</strong>
+        <strong style="color:green;">₹${p.price}</strong>
       </div>
     `
   })
@@ -34,3 +45,6 @@ async function loadProducts() {
 
 loadProducts()
 </script>
+
+</body>
+</html>
